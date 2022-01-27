@@ -6,10 +6,16 @@
   --hotmag: #ff17e4;
   --magenta: #e310cb;
   --aqua: #86fbfb;
-  --white: #f7f8fa;
+  --blue: #556cd6;
+  --green: #06a551 !important;
+  --bggray: #f9f9f9;
   --font-size: 1.3rem;
   --mono: "Oxygen mono", monospace;
   --sans: Oxygen, sans-serif;
+  --normal: menlo, monaco, consolas, Courier New, monospace, Helvetica Neue,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --cursive: "Pacifico", cursive;
+  --cursive-new: "Sacramento", cursive;
 }
 /* border box model: https://css-tricks.com/box-sizing/ */
 html {
@@ -25,8 +31,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--sans);
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--bggray);
 }
 
 h1,
@@ -36,34 +41,48 @@ h3 {
 }
 
 a {
-  color: var(--magenta);
+  color: inherit;
 }
 
 a:hover {
-  color: var(--hotmag);
+  color: var(--blue);
   text-decoration: none;
 }
 
 #intro {
   padding: 4rem 1rem 10rem 1rem;
   max-width: 1200px;
+  height: 100vh;
   margin: 0 auto;
 }
 
 #intro .name {
-  font-family: var(--mono);
+  font-family: var(--normal);
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 .name span {
-  font-family: var(--sans);
-  font-size: 4rem;
-  color: var(--aqua);
+  font-family: var(--cursive-new);
+  font-size: 5.5rem;
   display: block;
 }
 
 #intro h2 {
-  font-size: 4rem;
+  font-family: var(--normal);
+  font-size: 2.5rem;
   font-weight: normal;
+}
+
+#intro p {
+  margin: 0;
+  font-family: var(--normal);
+  font-size: 1.5rem;
+  padding-bottom: calc(1.5rem * 0.5);
+}
+
+#intro h2 span {
+  color: var(--blue);
 }
 
 #contact {
@@ -95,66 +114,93 @@ a:hover {
   margin-top: 3rem;
 }
 
-.nav-fixed{
-  width: 100%; 
+.nav-fixed {
+  width: 100%;
   position: sticky;
   top: 0;
-  background-color: var(--black);
-
+  backdrop-filter: blur(12px);
+  border-bottom: solid .5px var(--bggray);
 }
 
 nav ul {
   list-style-type: none;
-  padding: 2rem;
+  padding: 1.25rem;
   margin: 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  font-family: var(--normal);
+  font-weight: bold;
+}
+
+#cv {
+  background-color: white;
+  color: var(--blue);
+  border: 0.1rem solid var(--blue);
+  font-family: var(--normal);
+  padding: 0.75rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-size: 20px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+#get-in-touch {
+  background-color: var(--blue);
+  color: white;
+  border: 0;
+  font-family: var(--normal);
+  padding: 0.75rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  font-size: 20px;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 nav li:first-child {
   flex-basis: 100%;
   text-align: center;
+  color: var(--blue);
 }
 nav [class*="fa-"] {
   font-size: 150%;
-  color: var(--aqua);
 }
 
 nav h1 [class*="fa-"] {
   font-size: 100%;
-  color: var(--aqua);
+  color: var(--blue);
 }
 
 nav a {
-  color: var(--white);
   text-decoration: none;
   display: block;
 }
 
 nav a:hover,
 nav [class*="fa-"]:hover {
-  color: var(--magenta);
+  color: var(--blue);
 }
 
 .button {
-  background-color: var(--magenta);
-  color: var(--white);
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  font-family: var(--mono);
+  background-color: var(--green);
+  color: white;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  font-weight: lighter;
   text-decoration: none;
 }
 
 .button:hover {
-  color: var(--white);
-  background-color: var(--hotmag);
+  color: white;
+  box-shadow: var(--green) 0px 0px 0.5rem;
 }
 
 #projects {
-  padding: 4rem 1rem;
+  padding: 7rem 1rem;
 }
 
 #projects h2 {
